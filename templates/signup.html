@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}">
+
+<body>
+  <div class="signup">
+    <h2 class="signup-header">Thông tin cá nhân</h2>
+    <form class="signup-container" method="post">
+      <div class="tag"><input type="text" placeholder="Fullname" name="fullname"></div>
+      <div class="tag"><input type="text" placeholder="Username" name="username"></div>
+      <div class="tag"><input type="password" placeholder="Password" name="password"></div>
+      <div class="tag"><input type="password" placeholder="Re-Password" name="re-password"></div>
+      <div class="tag"><button type="submit" value="Sign Up">Sign Up</div>
+    </form>
+    <div class="message">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+    <div class="login">
+      <a href="./">Quay lại</a>
+    </div>
+  </div>
+</body>
+
+</html>

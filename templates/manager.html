@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title>Manager</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/manager.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-mynav">
+    <div class="nav">
+      <a class="navbar-brand" href="./manager">Manager</a>
+    </div>
+    <div class="nav">
+      <a class="navbar-brand" href="#">{{session['username']}}</a>
+      <a class="navbar-brand" href="/logout">Log out</a>
+    </div>
+  </nav>
+  <div class="button-container">
+    <button class="custom-button"><a href="/manager-sample">Manager Sample</a></button>
+    <button class="custom-button"><a href="/manager-label">Manager Label</a></button>
+    <button class="custom-button"> <a href="/manager-model">Manager Model</a></button>
+  </div>
+</body>
+
+</html>

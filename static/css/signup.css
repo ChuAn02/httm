@@ -1,0 +1,103 @@
+body {
+    background: #456;
+    font-family: 'Open Sans', sans-serif;
+}
+.signup-header {
+    background: #28d;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+.signup {
+    width: 400px;
+    margin: 100px auto;
+    font-size: 16px;
+}
+
+.tag {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 12px;
+}
+
+
+.signup-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+/* Every row inside .signup-container is defined with p tags */
+.signup input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 12px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+.signup button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+.signup input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+/* Text fields' focus effect */
+.signup input[type="text"]:focus,
+.signup input[type="password"]:focus {
+    border-color: #888;
+}
+
+.sign button:hover {
+    background: #17c;
+}
+
+/* Buttons' focus effect */
+.sign button:focus {
+    border-color: #05a;
+}
+
+.login {
+    width: 400px;
+    text-align: center;
+    background: #ebebeb;
+    border-color: transparent;
+    /* padding: 12px; */
+    box-sizing: border-box;
+    padding-bottom: 12px;
+    
+}
+a:hover{
+    color: red;
+}
+.message {
+    border: solid black 1px;
+    width: 400px;
+    text-align: center;
+    background: #ebebeb;
+    border-color: transparent;
+    box-sizing: border-box;
+    color: red;
+    padding-bottom: 10px;
+}

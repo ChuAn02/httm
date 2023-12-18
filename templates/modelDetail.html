@@ -1,0 +1,79 @@
+{% extends "modelBase.html" %}
+
+{% block tool %}
+<div class="model-tool">
+    <i class="bi bi-list" style="align-self: center; font-size: 2rem;"></i>
+    <button type="button" onclick="submitModel()" class="btn btn-light btn-outline-primary">
+        <i class="bi bi-upload"></i>
+        Update
+    </button>
+    <button type="button" class="btn btn-light btn-outline-danger" data-bs-toggle="modal"
+        data-bs-target="#deleteModelModal">
+        <i class="bi bi-trash"></i>
+        Delete
+    </button>
+    {% if model.status==0: %}
+    <button type="button" onclick="activeModel('{{model.id}}')" class="btn btn-light btn-outline-success">
+        <i class="bi bi-check-square"></i>
+        Active
+    </button>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form id="model" class="model-form" action="/manager-model/update/{{model.id}}" method="POST">
+        <div class="model-input">
+            <label for="model-id" class="form-label">ID</label>
+            <input type="text" disabled value="{{model.id}}" class="form-control" id="model-id" name="id">
+        </div>
+        <div class="model-input">
+            <label for="model-name" class="form-label">Name</label>
+            <input type="text" value="{{model.name}}" class="form-control" id="model-name" name="name">
+        </div>
+        <div class="model-input">
+            <label for="model-path" class="form-label">Path</label>
+            <input type="text" value="{{model.path}}" class="form-control" id="model-path" name="path">
+        </div>
+        <p style="margin: 0 0.5rem;">
+            Active status:
+            <b>
+                {% if model.status==1 :%}
+                {{'Active'}}
+                {% else %}
+                {{'Not active'}}
+                {% endif %}
+            </b>
+        </p>
+    </form>
+    <a href="/manager-model" style="margin: 1rem;" class="btn btn-warning">Back</a>
+</div>
+<div class="modal fade" id="deleteModelModal" tabindex="-1" aria-labelledby="deleteModelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModelModalModalLabel">Delete model</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{'Are you sure?'}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary " data-bs-dismiss="modal">NO</button>
+                <a href="/manager-model/delete/{{model.id}}">
+                    <button type="button" class="btn btn-light btn-outline-danger">YES</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function submitModel() {
+        document.getElementById('model').submit()
+    }
+    function activeModel(id) {
+        window.location.href = "/manager-model/active/" + id;
+    }
+</script>
+{% endblock %}

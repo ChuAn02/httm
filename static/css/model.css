@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    text-align: center !important;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: inherit !important;
+}
+
+label {
+    margin: 0 0.5rem;
+    align-self: center;
+}
+
+body {
+    padding-top: 7.5rem;
+}
+
+.search-bar {
+    align-items: center;
+    display: flex;
+}
+
+.search-bar>* {
+    height: 80%;
+}
+
+#notification {
+    position: fixed;
+    top: 5rem;
+    padding: 0.5rem;
+    background-color: cadetblue;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background: rgb(141, 255, 255);
+}
+
+.nav {
+    background-color: rgb(169, 211, 248);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.nav div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-icon {
+    font-size: 2rem;
+}
+
+.nav-tool>* {
+    margin: 0 0.75rem;
+}
+
+.model-options>* {
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 400;
+    align-self: center;
+    display: none;
+}
+
+.active-model {
+    display: flex;
+    align-items: center;
+}
+
+.model-tool>* {
+    margin: 0 0.25rem;
+}
+
+.model-input {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.model-input>label {
+    min-width: 5rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    .model-options {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .title {
+        display: block
+    }
+}

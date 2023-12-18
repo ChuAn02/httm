@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+</head>
+
+<body>
+  <div class="login">
+
+    <h2 class="login-header">Log in</h2>
+    <form class="login-container" method="post">
+      <div class="tag"><input type="text" placeholder="Username" name="username"></div>
+      <div class="tag"><input type="password" placeholder="Password" name="password"></div>
+      <div class="tag"><button type="submit" value="Log in">Log in</div>
+    </form>
+    <div class="message">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+
+    <div class="sign-up">
+      <div>
+        <p>Don't have an account ?</p>
+      </div>
+      <div><a href="./signup">Sign Up</a></div>
+    </div>
+  </div>
+</body>
+
+</html>

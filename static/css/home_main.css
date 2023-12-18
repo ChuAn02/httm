@@ -1,0 +1,96 @@
+p {
+    margin-top: 16px;
+}
+
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+body {
+    line-height: 1.5;
+    font-family: sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: black;
+    margin: 32px;
+}
+
+.container {
+    width: 540px;
+    margin: 0 auto;
+}
+
+header {
+    border: 1px solid #000;
+    border-bottom: none;
+}
+
+header p {
+    float: right;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+header h1 {
+    background-color: #ccc;
+    margin: 0;
+    padding: 12px 0;
+    font-family: "Rocher";
+}
+
+h1 {
+    text-decoration: none;
+    font-size: 170%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.select-btn {
+    border: 1px solid #000;
+    height: 400px;
+}
+
+.select-btn a {
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+}
+
+.select-btn .record {
+    background-color: rgb(247, 31, 31);
+    padding: 10px 45px;
+    color: #fff;
+    font-family: "Rocher";
+}
+
+.select-btn .upload-file {
+    background-color: green;
+    padding: 10px 30px;
+    color: #fff;
+    margin-top: 30px;
+    font-family: "Rocher";
+}
+
+@font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 9;
+}
+
+@font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+}
+
+@font-palette-values --Mint {
+    font-family: Rocher;
+    base-palette: 7;
+}

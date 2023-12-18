@@ -1,0 +1,16 @@
+voice_location,label
+data/wav/fake_voice/fake2_1.wav,0
+data/wav/real_voice/speaker1_1.wav,1
+data/wav/real_voice/speaker3_1.wav,1
+data/wav/real_voice/speaker4_7.wav,1
+data/wav/fake_voice/fake1_10.wav,0
+data/wav/fake_voice/fake5_10.wav,0
+data/wav/fake_voice/fake5_3.wav,0
+data/wav/fake_voice/fake4_1.wav,0
+data/wav/fake_voice/fake3_5.wav,0
+data/wav/real_voice/speaker3_3.wav,1
+data/wav/fake_voice/fake5_4.wav,0
+data/wav/fake_voice/fake2_3.wav,0
+data/wav/real_voice/speaker3_9.wav,1
+data/wav/fake_voice/fake3_9.wav,0
+data/wav/fake_voice/fake1_7.wav,0

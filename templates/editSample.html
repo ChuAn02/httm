@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Sample</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/editSample.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="form-edit">
+                <div>
+                    <h1>Edit Sample</h1>
+                </div>
+
+                <form action="" method="post">
+                    <div class="edit-body">
+                        {% for sample in sample %}
+                        <div class="row1">
+                            <label>ID</label>
+                            <input value="{{sample.id}}" name="id" type="text" readonly required>
+                        </div>
+
+                        <div class="row2">
+                            <label>Name</label>
+                            <input value="{{sample.name}}" name="name" type="text" required>
+                        </div>
+
+                        <div class="row3" style="display: none;" >
+                            <label>File path</label>
+                            <input type="text" name="filepath" id="filepath" value="{{sample.filepath}}" readonly>
+                        </div >
+                        <div class="row4">
+                            <label>Audio</label>
+                            <audio controls id="audioPlayer"  >
+                                <source src="/play_wav/{{sample.id}}" type="audio/wav">
+                            </audio>                        
+                        </div >
+                        <div class="row3">
+                            <label>Label</label>
+                            <select id="Label-value" class="select-label" name="label-value" style="width: 150px;">
+                                {% if sample.labelValue == 1 %}
+                                <option value="0" >Giọng nói giả mạo</option>
+                                <option value="1"  selected >Giọng nói thật</option>
+                                {% else%}
+                                <option value="0" selected >Giọng nói giả mạo</option>
+                                <option value="1"   >Giọng nói thật</option>
+                                {%endif%}
+                            </select>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <button type="submit">Update</button>
+                    <a href="/manager-sample">Back</a>
+                </form>
+                <div class="message">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

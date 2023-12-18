@@ -1,0 +1,75 @@
+{% extends "modelBase.html" %}
+
+{% block tool %}
+<div class="nav-tool">
+    <form class="search-bar" method="POST">
+        <input id="search-input" name="str" class="form-control" type="search" placeholder="Search model"
+            aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+    <a href="/manager">
+        <div>
+            <i class="bi bi-box-arrow-right nav-icon">&nbsp;</i>
+        </div>
+    </a>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="model-options">
+        <div class="active-model">
+            <div>Active model:&nbsp;<b>{{activeModel.name}}</b>&nbsp;</div>
+            <button type="button" class="btn btn-info"><a href="/manager-model/train-retrain">Train/Retrain</a></button>
+        </div>
+        <form class="d-flex" method="POST">
+            <div class="d-flex">
+                <label for="start-date">Start</label>
+                <input class="form-control" type="date" id="start-date" name="start-date">
+            </div>
+            <div class="d-flex">
+                <label for="end-date">End</label>
+                <input class="form-control" type="date" id="end-date" name="end-date">
+            </div>
+            <button type="submit" class="btn btn-warning">Search</button>
+            </from>
+    </div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Path</th>
+                <th scope="col">Date</th>
+                <th scope="col">Accuracy</th>
+                <th scope="col">Precision</th>
+                <th scope="col">Recall</th>
+                <th scope="col">F1-score</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for model in models: %}
+            <tr>
+                <td>{{model.id}}</td>
+                <td>{{model.name}}</td>
+                <td>{{model.path}}</td>
+                <td>{{model.date}}</td>
+                <td>{{model.acc}}</td>
+                <td>{{model.pre}}</td>
+                <td>{{model.recall}}</td>
+                <td>{{model.f1_score}}</td>
+                <td style="text-align: center;">
+                    <a class="btn btn-success btn-outline-light" href="/manager-model/{{model.id}}">
+                        <i class="bi bi-pencil-fill"></i>
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

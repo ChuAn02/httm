@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống nhận diện giọng nói giả mạo</title>
+    <link rel="stylesheet" href="../static/css/home_main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Fake Voice Recognition System</h1>
+            <p>Xin chào, {{session['username']}}</p>
+        </header>
+
+        <div class="select-btn">
+            <div class="select" style="transform: translateY(-10%)">
+                <a href="home_record" class="record">Record</a>
+                <a href="home_upload" class="upload-file">Upload File</a>
+                <a href="fake-voice-detection" class="upload-file">Fake Voice Detection</a>
+                <a href="logout" class="upload-file">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

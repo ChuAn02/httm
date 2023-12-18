@@ -1,0 +1,100 @@
+p {
+    margin-top: 16px;
+}
+
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+body {
+    line-height: 1.5;
+    font-family: sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: black;
+    margin: 32px;
+}
+
+.container {
+    width: 540px;
+    margin: 0 auto;
+}
+
+header {
+    border: 1px solid #000;
+    border-bottom: none;
+}
+
+header p {
+    float: right;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+header h1 {
+    background-color: #ccc;
+    margin: 0;
+    padding: 12px 0;
+    font-family: "Rocher";
+}
+
+h1 {
+    text-decoration: none;
+    font-size: 170%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.upload-file {
+    border: 1px solid #000;
+    height: 500px;
+}
+
+.upload-file h2 {
+    margin-top: 80px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.upload-file h3 {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.upload-file form {
+    margin-left: 25px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.upload-file form .upload {
+    margin-left: 30px;
+}
+
+.upload-file audio {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.upload-file .back-btn {
+    text-decoration: none;
+    background-color: rgba(156, 36, 36, 0.582);
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    color: #000;
+    font-weight: 500;
+    font-family: "Rocher";
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 20px;
+}
+
+.upload-file .back-btn:hover {
+    background-color: rgba(156, 36, 36, 0.692);
+}

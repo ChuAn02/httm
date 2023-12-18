@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add Sample</title>
+    <link rel="stylesheet" href="../static/css/addSample.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="form-add">
+                <div>
+                    <h1>Add Sample</h1>
+                </div>
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="add-body">
+
+                        <div class="row2" id="namefile" style="display: none;">
+                            <label>Name</label>
+                            <input value="" name="name" type="text" required id="fileName" >
+                        </div>
+                        <div class="row3">
+                            <label>File audio WAV</label>
+                            <input type="file" name="fileInput" id="fileInput" />
+                        </div>
+                        <audio controls id="audioPlayer">
+                            <source src="" type="audio/wav">
+                        </audio>
+                        <div class="row4" >
+                            <label>Label</label>
+                            <select id="Label-value" class="select-label" name="label-value" style="width: 150px;">
+                                <option value="0" >Giọng nói giả mạo</option>
+                                <option value="1"  >Giọng nói thật</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit">Add</button>
+                    <a href="/manager-sample">Back</a>
+                </form>
+                <div class="message">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const fileNameText = document.getElementById("fileName");
+
+        fileInput.addEventListener("change", function () {
+            if (fileInput.files.length > 0) {
+                // Lấy tên tệp từ đối tượng File đầu tiên trong danh sách đã chọn
+                const fileName = fileInput.files[0].name;
+                // Hiển thị tên tệp trên thẻ input text
+                fileNameText.value = fileName;
+            } else {
+                // Nếu không có tệp nào được chọn, xóa nội dung của thẻ input text
+                fileNameText.value = "";
+            }
+        });
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        fileInput.addEventListener('change', function (event) {
+            const audioFile = URL.createObjectURL(event.target.files[0]);
+            audioPlayer.src = audioFile;
+        });
+        document.getElementById('fileInput').addEventListener('change', function () {
+            var fileInput = document.getElementById('fileInput');
+            var additionalClass = document.getElementById('namefile');
+
+            if (fileInput.files.length > 0) {
+                additionalClass.style.display = 'block';
+            } else {
+                additionalClass.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
